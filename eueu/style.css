@@ -1,0 +1,72 @@
+.sl0 {
+	padding: 0;
+	width: 900px;
+	border: 40px solid black;
+}
+
+.bd {
+	background-color: #006a54;
+}
+
+.bd1 {
+	background-color:#3ab571;
+}
+
+.pets {
+	margin-left: 130px;
+}
+
+.bt1 {
+	margin-left: 500px;
+	background-color: yellow;
+}
+.foot {
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+
+.eu {
+	margin-right: 200px; 
+}
+
+.art {
+	text-align: center;
+}
+
+.txt {
+	font-size: 18px;
+}
+
+.pct1 {
+	float: right;
+}
+
+.pct2 {
+	float: left;
+}
+
+.pct3 {
+	margin-left: 180px;
+}
+
+.pct4 {
+	width: 1200px;
+}
+
+.pct5 {
+	margin-left: 380px;
+}
+
+.cnt {
+	height: 100px;
+	margin: -25px 0px 0px 390px;
+}
+
+.lz {
+	margin-left: 480px;
+}
+
+.pct6 {
+	margin-left: 140px;
+}
