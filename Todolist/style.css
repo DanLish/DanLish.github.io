@@ -1,0 +1,52 @@
+body {
+	background-color: #f7f588;
+}
+
+.delete {
+	font-size: 30px;
+	color: red;
+}
+
+.createnew {
+	font-size: 30px;
+	color: white;
+	height: 40px;
+    width: 420px;
+    background: #878F94;
+    display: block;
+    margin: 20px 0;
+    padding: 0 10px 0 10px;
+    transform: skewX(-25deg);
+}
+
+.createnew:hover {
+	margin-left: 100px;
+	transition: 1s all;
+	border: 5px solid black;
+}
+
+.task {
+	color: green;
+}
+
+input:checked + label > div {
+  background-color: red;
+}
+
+.delete {
+	font-size: 30px;
+	color: red;
+	height: 40px;
+    width: 420px;
+    background: #878F94;
+    display: block;
+    margin: 20px 0;
+    padding: 0 10px 0 10px;
+    transform: skewX(-25deg);
+}
+
+.delete:hover {
+	margin-left: 100px;
+	transition: 1s all;
+	border: 5px solid black;
+}
