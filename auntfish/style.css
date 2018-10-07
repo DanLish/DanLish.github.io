@@ -1,0 +1,57 @@
+.sl0 {
+	padding: 0;
+	width: 900px;
+	border: 40px solid black;
+}
+
+.sl0 {
+	width: 73.36363636363636%;
+	max-width: 100%;
+}
+
+body {
+	background-image: url(img/grnd.png);
+}
+
+.lnk:hover {
+	border: 10px solid #AFEEEE;
+}
+
+.adaptive {
+max-width: 100%;
+height: auto;
+}
+
+.cntrpct {
+	text-align: center;
+	overflow: hidden;
+}
+
+.balance {
+	overflow: hidden;
+	margin-bottom: 1000px;
+}
+
+.block {
+width: 645px;
+height: 359px;
+position: relative;
+overflow: hidden;
+float: left;
+border: 1px solid black;
+background-color: violet;
+border-radius: 50px
+}
+
+.bspan {
+	text-align: center;
+	font-size: 100px;
+}
+
+.blnc1 {
+	color: #7CFC00;
+}
+
+.blnc2 {
+	color: red;
+}
