@@ -4,6 +4,7 @@
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<meta charset="UTF-8">
 	<title>НС1</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <!--Подключение CSS-составляющей фреймворка Bootstrap -->
 
 	<script src="brain.js/browser.min.js"></script> <!-- Подключение библиотеки brain.js -->
 
@@ -21,6 +22,41 @@
 	</style> <!-- Прописываем стили (CSS-код) -->
 </head>
 <body>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> <!-- Подключение JS-составляющей фреймворка Bootstrap -->
+
+	<a href="#" class="btn btn-primary" data-toggle="modal" data-target="exampleModal">Инструкция пользователя</a>
+
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labellendby="exampleModal" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Инструкция пользователя.</h5>
+					<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p>На холсте можно создавать любые рисунки с помощью левой кнопки мыши.</p>
+					<p>Чтобы обучить нейронную сеть, нажимаем на клавишу v и присваиваем рисунку значение “positive” или “negative” (во всплывающем модальном окне жмем “OK” или “Отмена” ). Чтобы стереть рисунок, нажимаем клавишу c.</p>
+					<p>Чтобы распознать рисунок, нажимаем клавишу b. После этого можно стереть рисунок, нажав на клавишу c.</p>
+					<p>Примечание: очистка холста, распознавание изображения и обучение нейронной сети будут происходить после нажатия клавиш только в том случае, если используется английская раскладка клавиатуры.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script>
+	$(document).ready(function(){
+  //при нажатию на любую кнопку, имеющую класс .btn
+  $(".btn").click(function() {
+    //открыть модальное окно с id="myModal"
+    $("#exampleModal").modal('show');
+  });
+});
+</script>
 	
 	<canvas id="canv" style="display: block;">Ваш браузер устарел, обновитесь.</canvas> <!-- Объявляем холст -->
 
