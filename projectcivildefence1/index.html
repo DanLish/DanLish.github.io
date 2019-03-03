@@ -96,44 +96,24 @@
 		var game = new Phaser.Game(config);
 
 		function preload() {
-			game.load.image('backdrop', 'img/remember-me.jpg');
-    		game.load.image('ball', 'img/char.png');
+			this.load.image('sky', 'img/sky.png');
+    		this.load.image('ground', 'img/platform.png');
+    		this.load.spritesheet('char', 'img/char.png', { frameWidth: 32, frameHeight: 48 });
     	}
 
-    	var ball;
-    	var cursors;
+    	var platforms;
 
     	function create() {
-    		game.physics.startSystem(Phaser.Physics.ARCADE);
-    		game.world.setBounds(0, 0, 1920, 1200);
-    		game.add.sprite(0, 0, 'backdrop');
-    		ball = game.add.sprite(game.world.randomX, 200, 'ball');
-    		game.physics.arcade.enable(ball);
-    		game.camera.follow(ball);
-    		cursors = game.input.keyboard.createCursorKeys();
-		}
+    		this.add.image(400, 227, 'sky');
+    		platforms = this.physics.add.staticGroup();
+    		platforms.create(400, 568, 'ground').setScale(2).refreshBody();
+    		platforms.create(600, 400, 'ground');
+    		platforms.create(50, 250, 'ground');
+    		platforms.create(750, 220, 'ground');
+    	}
 
 		function update() {
-    		ball.body.velocity.x = 0;
-    		ball.body.velocity.y = 0;
-    		if (cursors.left.isDown)
-    		{
-        		ball.body.velocity.x = -240;
-    		}
-    		else if (cursors.right.isDown)
-    		{
-       		 	ball.body.velocity.x = 240;
-    		}
-
-    		if (cursors.up.isDown)
-    		{
-        		ball.body.velocity.y = -240;
-    		}
-    		else if (cursors.down.isDown)
-    		{
-       			ball.body.velocity.y = 240;
-    		}
-
+   			
 		}
 	</script>
 	<img src="img/panel.png" class="panel" />
