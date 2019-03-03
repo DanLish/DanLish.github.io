@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<meta charset="UTF-8">
+	<title>Civil Defence</title>
+	<script type="text/javascript" src="phaser.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+
+	<style>
+		body {
+			background-image: url(img/bkg.jpg);
+			padding-left: 220px;
+		}
+		.screen {
+			max-width: 100%;
+			margin-left: -207px;
+			margin-right: 10px;
+			position: absolute;
+		}
+
+		.panel {
+			left:0;
+            right:0;
+            bottom: 0px;
+            margin-top: 500px;
+            margin-right: 10px;
+            margin-left: 0px;
+            margin-bottom: 290px;
+            width: 1250px;
+            height: 100px; 
+            position: absolute;
+		}
+
+		.chat {
+			left:0;
+            right:0;
+          	position: fixed;
+            bottom: 0px;
+            margin-right: 10px;
+            margin-left: 10px;
+            margin-bottom: 80px;
+			height: 150px;
+			background-color: #C0C0C0; 
+		}
+
+		.msg {
+			left:0;
+            right:0;
+            position: absolute;
+            bottom: 0px;
+            margin-right: 10px;
+            margin-left: 10px;
+            margin-bottom: 50px;
+            width: 900px;
+            height: 30px;
+		}
+
+		.chatbtn {
+			left:0;
+            right:0;
+            position: absolute;
+            bottom: 0px;
+            margin-right: 10px;
+            margin-left: 907px;
+            margin-bottom: 50px;
+		}
+	</style> 
+</head>
+<body>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="chatprot.js"></script>
+	
+	<img src="img/screen.png" width="1250px" height="500px" class="screen" />
+	<script type="text/javascript">
+		var config = {
+			type: Phaser.AUTO,
+			width: 800,
+			height: 455,
+			physics: {
+				default: 'arcade',
+				arcade: {
+					gravity: { y: 300 },
+					debug: false
+        		}
+    		},
+			scene: {
+				preload: preload,
+				create: create,
+				update: update
+			}
+		};
+
+		var game = new Phaser.Game(config);
+		var platforms;
+
+		function preload ()
+		{
+			  this.load.image('sky', 'img/sky.png');
+			  this.load.image('ground', 'img/platform.png');
+			  this.load.spritesheet('char', 'img/char.png', { frameWidth: 32, frameHeight: 48 });
+		}
+
+		function create ()
+		{
+			this.add.image(400, 227, 'sky');
+
+			platforms = this.physics.add.staticGroup();
+			platforms.create(400, 568, 'ground').setScale(2).refreshBody();
+			platforms.create(600, 400, 'ground');
+    		platforms.create(50, 250, 'ground');
+    		platforms.create(750, 220, 'ground');
+		}
+
+		function update ()
+		{
+		}
+	</script>
+	<img src="img/panel.png" class="panel" />
+	<div class="chat" id="chat1"></div>
+	<form>
+		<textarea type="text" name="msg" class="msg" autocomplete="off" id="mssg" /></textarea><input onclick="myFunction()" type="button" name="chatbtn" class="chatbtn" value="Отправить" id="butt" />
+	</form>
+</body>
+</html>
