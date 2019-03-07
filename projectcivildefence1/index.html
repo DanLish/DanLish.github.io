@@ -104,6 +104,7 @@
     	var platforms;
 
     	function create() {
+    		this.bounds = new Phaser.Rectangle(0,0, 760 730)
     		this.add.image(400, 227, 'sky');
     		platforms = this.physics.add.staticGroup();
     		platforms.create(390, 480, 'ground').setScale(3).refreshBody();
